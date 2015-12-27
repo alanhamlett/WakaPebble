@@ -43,14 +43,11 @@ var toHHMMSS = function (date) {
 	return time;
 };
 
-var today = new Date();
-var today = [today.getMonth()+1,today.getDate(),today.getFullYear()].join('/');
-
 var api_key='API KEY';
 
 ajax(
 	{
-		url: 'https://wakatime.com/api/v1/users/current/durations?date='+today+'&api_key='+api_key,
+		url: 'https://wakatime.com/api/v1/users/current/durations?date=today&api_key='+api_key,
 		type: 'json'
 	}, 
 
@@ -60,7 +57,7 @@ ajax(
 		console.log("data", data.data, data.data.length);
 
 		if (data.data.length == 0) {
-			console.log("No data for date "+today);
+			console.log("No data for Today.");
 			items.push({
 				title: 'No time logged',
 				subtitle: 'Get to work!'
