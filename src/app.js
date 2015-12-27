@@ -87,7 +87,7 @@ ajax(
 	},
 	function(error) {
 		// Failure!
-		console.log('Failed fetching WakaTime data: ' + error);
+		console.log('WakaTime API Error: ' + JSON.stringify(error));
 	}
 );
 
